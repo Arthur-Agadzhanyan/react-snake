@@ -32,7 +32,7 @@ class App extends Component {
 
   componentDidUpdate() {
 
-    if (this.state.noGame == false) {
+    if (this.state.noGame === false) {
       this.checkIfOutTheBorders()
       this.checkIfCollapsed()
       this.checkIfEat()
@@ -41,16 +41,16 @@ class App extends Component {
 
   onKeyDown = (e) => {
     e = e || window.event // получаем event всего приложения (чтобы он был работал при нажатии на клавишу при нахождении на сайте а не только при клике или фокусе на элементе)
-    if (e.keyCode == 37 && this.state.direction != "RIGHT") {
+    if (e.keyCode === 37 && this.state.direction !== "RIGHT") {
       this.setState({ direction: "LEFT" });
     }
-    else if (e.keyCode == 38 && this.state.direction != "DOWN") {
+    else if (e.keyCode === 38 && this.state.direction !== "DOWN") {
       this.setState({ direction: "UP" });
     }
-    else if (e.keyCode == 40 && this.state.direction != "UP") {
+    else if (e.keyCode === 40 && this.state.direction !== "UP") {
       this.setState({ direction: "DOWN" });
     }
-    else if (e.keyCode == 39 && this.state.direction != "LEFT") {
+    else if (e.keyCode === 39 && this.state.direction !== "LEFT") {
       this.setState({ direction: "RIGHT" });
     }
   }
@@ -94,7 +94,7 @@ class App extends Component {
     let head = snake[snake.length - 1]
     snake.pop()//Метод pop() удаляет последний элемент из массива и возвращает его значение.
     snake.forEach(dot => {// проходимся по массиву змеи и смотрим есть ли snake-dot у которого координаты такие же как и у головы (перед этим мы вырезали голову из массива чтобы не получалось так что голова сама себя ест)
-      if (head[0] == dot[0] && head[1] == dot[1]) {
+      if (head[0] === dot[0] && head[1] === dot[1]) {
         this.onGameOver()
       }
     })
@@ -103,7 +103,7 @@ class App extends Component {
   checkIfEat() {// змея кушает еду
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];//берем последний элемент массива (голову)
     let food = this.state.food;// получаем еду
-    if (head[0] == food[0] && head[1] == food[1]) {// если координаты еды и головы змеи одинаковы то выполняем код
+    if (head[0] === food[0] && head[1] === food[1]) {// если координаты еды и головы змеи одинаковы то выполняем код
       this.setState({ food: getRandomCoordinates() })// создает новые координаты еды
       this.enlargeSnake()// увеличивает змею
       this.scaleSpeed()// увеличивает её скорость
@@ -119,12 +119,12 @@ class App extends Component {
   }
 
   scaleSpeed() {
-    if (this.state.snakeDots.length == 11) {
+    if (this.state.snakeDots.length === 11) {
       this.setState({ speed: this.state.speed - 10 })
       clearInterval()
       setInterval(this.moveSnake, this.state.speed);
     }
-    if (this.state.snakeDots.length == 21) {
+    if (this.state.snakeDots.length === 21) {
       this.setState({ speed: this.state.speed - 10 })
       clearInterval()
       setInterval(this.moveSnake, this.state.speed);
@@ -167,26 +167,26 @@ class App extends Component {
         </div>
         <div className='controller' >
           <button style={styleController} onClick={() => {
-            if (this.state.direction != "DOWN") {
+            if (this.state.direction !== "DOWN") {
               this.setState({ direction: "UP" });
             }
           }}>&#8593;</button>
           <br />
           <button style={styleController} onClick={() => {
 
-            if (this.state.direction != "RIGHT") {
+            if (this.state.direction !== "RIGHT") {
               this.setState({ direction: "LEFT" });
             }
           }}>&#8592;</button>
 
           <button style={styleController} onClick={() => {
-            if (this.state.direction != "UP") {
+            if (this.state.direction !== "UP") {
               this.setState({ direction: "DOWN" });
             }
           }}>&#8595;</button>
 
           <button style={styleController} onClick={() => {
-            if (this.state.direction != "LEFT") {
+            if (this.state.direction !== "LEFT") {
               this.setState({ direction: "RIGHT" });
             }
           }}>&#8594;</button>
