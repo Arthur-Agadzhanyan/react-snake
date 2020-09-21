@@ -120,12 +120,12 @@ class App extends Component {
 
   scaleSpeed() {
     if (this.state.snakeDots.length === 11) {
-      this.setState({ speed: this.state.speed - 10 })
+      this.setState({ speed: this.state.speed - 5 })
       clearInterval()
       setInterval(this.moveSnake, this.state.speed);
     }
     if (this.state.snakeDots.length === 21) {
-      this.setState({ speed: this.state.speed - 10 })
+      this.setState({ speed: this.state.speed - 5 })
       clearInterval()
       setInterval(this.moveSnake, this.state.speed);
     }
