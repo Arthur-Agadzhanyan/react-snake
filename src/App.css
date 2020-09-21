@@ -1,38 +1,187 @@
-.App {
+body{
+  background: #000114;
+  transition: all .2s linear;
+  font-family: 'Montserrat', sans-serif;
+}
+/* Menu */
+
+.wrapper{
+  display: flex;
+  width: 100vw;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.menu_title{
+  color: #fff;
+  font-size: 70px;
+  text-align: center;
+  margin: 0;
+}
+.menu_subtitle{
+  color: #fff;
+}
+.start{
+  padding: 5px 15px;
+  margin-top: 20px;
+  font-size: 30px;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  transition: all .2s linear;
+  cursor: pointer;
+}
+.start:hover{
+  background: #fff;
+  color:#000114
+}
+
+/* Game --------------------------------------*/
+.game-area{
+  position: relative;
+  margin: 50px auto;
+  width: 600px;
+  height: 600px;
+  border: 2px solid #fff;
+}
+
+.snake-dot{
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: #00dd37;
+  z-index: 2;
+}
+
+.snake-food{
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: red;
+  border-radius: 100px;
+  z-index: 1;
+}
+
+.count{
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+
+.controller{
+  display: none;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.controller button{ 
+  font-size: 30px;
+  background: transparent;
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 1500px) and (max-height: 883px){
+  .game-area{
+    margin: 30px auto;
+    width: 500px;
+    height: 500px;
+    margin: 20px auto;
+  }
+}
+@media screen and (max-width: 1500px) and (max-height: 660px){
+  .game-area{
+    margin: 20px auto;
+    width: 400px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 1500px) and (max-height: 538px){
+  .game-area{
+    margin: 20px auto;
+    width: 350px;
+    height: 350px;
+  }
+  .count{
+    font-size: 1.7rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1500px) and (max-height: 450px){
+  .game-area{
+    margin: 10px auto;
+    width: 300px;
+    height: 300px;
   }
-  to {
-    transform: rotate(360deg);
+  .count{
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 992px){
+  .controller{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .game-area{
+    margin: 30px auto;
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .game-area{
+    margin: 30px auto;
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .game-area{
+    margin: 30px auto;
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .game-area{
+    margin: 30px auto;
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .game-area{
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+  }
+  .menu_title{
+    color: #fff;
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+  }
+  .menu_subtitle{
+    color: #fff;
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-height: 350px){
+  .game-area{
+    margin: 30px auto;
+    width: 200px;
+    height: 200px;
   }
 }
